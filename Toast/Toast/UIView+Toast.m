@@ -135,7 +135,15 @@ static const NSString * CSToastTapCallbackKey   = @"CSToastTapCallbackKey";
 }
 
 
+- (void)dimissToast:(UIView *)toast
+{
+    NSTimer *timer = (NSTimer *)objc_getAssociatedObject(self, &CSToastTimerKey);
+    [timer invalidate];
+    [self hideToast:toast];
+    
+}
 - (void)hideToast:(UIView *)toast {
+
     [UIView animateWithDuration:CSToastFadeDuration
                           delay:0.0
                         options:(UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionBeginFromCurrentState)

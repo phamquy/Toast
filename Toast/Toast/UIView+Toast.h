@@ -49,4 +49,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - (void)showToast:(UIView *)toast duration:(NSTimeInterval)interval position:(id)point
       tapCallback:(void(^)(void))tapCallback;
 
+- (void)dimissToast:(UIView *)toast;
 @end
